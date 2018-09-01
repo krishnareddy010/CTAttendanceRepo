@@ -45,6 +45,20 @@ public class GraphApiProperties {
 	
 	
 	/**
+	 * @return the proxy
+	 */
+	public String getProxy() {
+		return proxy;
+	}
+
+	/**
+	 * @param proxy the proxy to set
+	 */
+	public void setProxy(String proxy) {
+		this.proxy = proxy;
+	}
+
+	/**
 	 * @return the colorCode
 	 */
 	public Map<String, String> getColorCode() {
