@@ -6,15 +6,15 @@ import java.net.Proxy.Type;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ct.attendance.properties.GraphApiProperties;
+import com.ct.attendance.properties.ProxyProperties;
 
 /**
  * @author M Krishna Reddy
@@ -28,13 +28,13 @@ public class Application {
 	private RestTemplate restTemplate;
 
 	@Autowired
-	private GraphApiProperties properties;
+	private ProxyProperties properties;
 
 	@Bean(name = "restTemplate")
 	public RestTemplate restTemplate() throws KeyManagementException, NoSuchAlgorithmException {
 
-		if ("true".equals(properties.getProxy())) {
-			Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("sjc1intproxy01.crd.ge.com", 8080));
+		if ("true".equals(properties.getProxyset())) {
+			Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress(properties.getHost(), Integer.parseInt(properties.getPort())));
 			SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
 			requestFactory.setProxy(proxy);
 			SSLUtil.turnOffSslChecking();

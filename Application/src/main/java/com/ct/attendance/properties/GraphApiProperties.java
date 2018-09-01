@@ -39,24 +39,7 @@ public class GraphApiProperties {
 	private String toDate;
 	
 	private Map<String,String> colorCode;
-	
-	private String proxy;
-	
-	
-	
-	/**
-	 * @return the proxy
-	 */
-	public String getProxy() {
-		return proxy;
-	}
 
-	/**
-	 * @param proxy the proxy to set
-	 */
-	public void setProxy(String proxy) {
-		this.proxy = proxy;
-	}
 
 	/**
 	 * @return the colorCode

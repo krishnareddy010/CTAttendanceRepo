@@ -7,7 +7,8 @@ package com.ct.attendance.models;
  * @author M Krishna Reddy
  *
  */
-import java.util.HashMap;
+import java.util.HashMap
+;
 import java.util.Map;
 
 import org.json.simple.JSONObject;
