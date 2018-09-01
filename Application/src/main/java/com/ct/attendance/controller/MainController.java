@@ -2,6 +2,7 @@ package com.ct.attendance.controller;
 
 import java.util.UUID;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.json.JSONObject;
@@ -12,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ct.app.attendance.auth.AuthHelper;
-import com.ct.app.attendance.auth.IdToken;
-import com.ct.app.attendance.auth.TokenResponse;
+import com.ct.attendance.auth.AuthHelper;
+import com.ct.attendance.auth.IdToken;
+import com.ct.attendance.auth.TokenResponse;
 
 @RestController
 public class MainController {
